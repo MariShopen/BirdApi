@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Auth</title>
+  </head>
+  <body>
+    <h1>Login Form</h1>
+
+    <!-- A form for data input. It has an id so we can find it in JavaScript. -->
+    <form id="login-form">
+      <div>
+        <label for="username">Username:</label>
+        <!-- Input field for the name. `required` means it cannot be empty. -->
+        <input type="text" id="username" name="username" required />
+      </div>
+      <br />
+      <div>
+        <label for="password">Password:</label>
+        <!-- Input field for the password. -->
+        <input type="password" id="password" name="password" required />
+      </div>
+      <br />
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- This block will show the response from the server -->
+    <div id="response-message" style="margin-top: 20px"></div>
+
+    <hr style="margin: 40px 0" />
+
+    <h1>Image Search</h1>
+    <form id="image-search-form">
+      <div>
+        <label for="search-query">Search for an image:</label>
+        <input type="text" id="search-query" name="query" required />
+      </div>
+      <br />
+      <button type="submit">Get Image</button>
+    </form>
+
+    <div id="image-container" style="margin-top: 20px">
+      <!-- Image will be displayed here -->
+    </div>
+
+    <!-- Connect our external JavaScript file. -->
+    <!-- The `defer` attribute tells the browser to load the script in parallel with the HTML, -->
+    <!-- but to execute it only after the entire page has been parsed. -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
