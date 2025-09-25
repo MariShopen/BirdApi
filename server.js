@@ -80,8 +80,12 @@ app.get("/api/image", async (req, res) => {
 
     const data = await pexelsResponse.json();
 
-    // Send the first photo found back to the client
-    res.status(200).json(data.photos[0]);
+    // Send the random photo from array of photos found back to the client
+    const allPhotos = data.photos;
+    const randomPhoto = allPhotos[Math.floor(Math.random() * allPhotos.length)];
+    console.log("allPhoots:", allPhotos);
+
+    res.status(200).json(randomPhoto);
   } catch (error) {
     res.status(500).json({ message: "Error fetching image from Pexels." });
   }
